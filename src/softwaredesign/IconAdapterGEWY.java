@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package softwaredesign;
 
 import javax.swing.Icon;
@@ -15,7 +14,16 @@ import javax.swing.*;
  */
 public class IconAdapterGEWY {
 
-    Icon icon = new CarIcon(100);
-    JComponent component = new IconAdapter(icon) {
-    };
+    public static void main(String[] args) {
+        Icon icon = new CC2("image.jpg");
+        JComponent component = new IconAdapter(icon);
+        JFrame f = new JFrame();
+        JPanel pain = new JPanel();
+        pain.add(component);
+        f.add(component);
+        f.setSize(component.getPreferredSize());
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setVisible(true);
+    }
+
 }

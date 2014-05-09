@@ -16,8 +16,8 @@ import javax.swing.JComponent;
  *
  * @author pat
  */
-public abstract class IconAdapter extends JComponent {
-    
+public class IconAdapter extends JComponent {
+
     private Icon icon;
 
     public IconAdapter(Icon i) {
@@ -33,4 +33,3 @@ public abstract class IconAdapter extends JComponent {
                 icon.getIconHeight());
     }
 }
-

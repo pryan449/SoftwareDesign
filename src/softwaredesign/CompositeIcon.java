@@ -30,6 +30,9 @@ public class CompositeIcon implements Icon {
         locationList = new ArrayList<Point>();
     }
 
+    CompositeIcon() {
+    }
+
     public int getIconWidth() {
         return width;
     }

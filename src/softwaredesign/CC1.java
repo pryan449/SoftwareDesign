@@ -16,5 +16,4 @@ public class CC1 extends ImageIcon{
     public CC1(String k){
         super(k);
     }
-    
 }

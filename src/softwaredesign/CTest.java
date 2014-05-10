@@ -3,27 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package softwaredesign;
 
-import javax.swing.Icon;
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  *
  * @author pat
  */
-public class IconAdapterGEWY {
-
-    public static void main(String[] args) {
-        Icon icon = new CC2("DAN.jpg");
-        JComponent component = new IconAdapter(icon);
+public class CTest {
+    public static void main(String[] args){
+        CompositeGewy gui = new CompositeGewy();
+        gui.setVisible(true);
         JFrame f = new JFrame();
         JPanel pain = new JPanel();
-        pain.add(component);
-        f.add(component);
-        f.setSize(component.getPreferredSize());
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setVisible(true);
+        
     }
-
+    
 }

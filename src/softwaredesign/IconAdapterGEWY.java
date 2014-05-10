@@ -15,15 +15,11 @@ import javax.swing.*;
 public class IconAdapterGEWY {
 
     public static void main(String[] args) {
-        Icon icon = new CC2("DAN.jpg");
-        JComponent component = new IconAdapter(icon);
-        JFrame f = new JFrame();
-        JPanel pain = new JPanel();
-        pain.add(component);
-        f.add(component);
-        f.setSize(component.getPreferredSize());
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.setVisible(true);
+       JFrame frame = new JFrame();
+       frame.setSize(600, 600);
+       JComponent a = new IconAdapter(new CC1("1396752876253.jpg"));
+       frame.add(a);
+       frame.setVisible(true);
     }
 
 }

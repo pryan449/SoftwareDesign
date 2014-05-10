@@ -5,58 +5,47 @@
  */
 package softwaredesign;
 
- import java.awt.*; 
- import java.util.*; 
- import javax.swing.*;
-
-
+import java.awt.*;
+import java.util.*;
+import javax.swing.*;
 
 /**
  *
  * @author pat
  */
 import javax.swing.Icon;
+
 public class CompositeIcon implements Icon {
 
-    private ArrayList<Icon> icons;
-    private ArrayList<Integer> Xlist;
-    private ArrayList<Integer> Ylist;
-  
-    
-    
-    public void addIcon(Icon icon, int x, int y){
-        icons.add(icon);
-        Xlist.add(x);
-        Ylist.add(y);
+    private ArrayList<Icon> iconList;
+    private ArrayList<Integer> XList;
+    private ArrayList<Integer> YList;
+
+    public CompositeIcon() {
+        iconList = new ArrayList<Icon>();
+        XList = new ArrayList<Integer>();
+        YList = new ArrayList<Integer>();
     }
-    
-    public CompositeIcon(){
-    	icons = new ArrayList<Icon>();
-    	Xlist = new ArrayList<Integer>();
-    	Ylist = new ArrayList<Integer>();
+
+    public int getIconHeight() {
+        return 700;
     }
-    
-    public ArrayList getList(){
-    	return icons;
+
+    public int getIconWidth() {
+        return 700;
     }
-   
-    
-    
+
     @Override
     public void paintIcon(Component c, Graphics g, int x, int y) {
-        for(int i = 0; i < icons.size(); i++){
-            icons.get(i).paintIcon(c, g, Xlist.get(i), Ylist.get(i));
+        for (int i = 0; i < iconList.size(); i++) {
+            iconList.get(i).paintIcon(c, g, XList.get(i), YList.get(i));
         }
+
     }
 
-    @Override
-    public int getIconWidth() {
-        return 25;
+    public void addIcon(Icon icon, int x, int y) {
+        iconList.add(icon);
+        XList.add(x);
+        YList.add(y);
     }
-
-    @Override
-    public int getIconHeight() {
-        return 25;
-    }
-    
 }

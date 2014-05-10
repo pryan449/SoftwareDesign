@@ -35,7 +35,7 @@ public class CompositeGewy extends JPanel {
     {
         CompositeIcon icons = new CompositeIcon();
         icons.addIcon(new CC1("1396752876253.jpg"), 100, 170);
-        icons.addIcon(new CC2("1396978076204.jpg"), 200, 100);
+        icons.addIcon(new CC2("DAN.jpg"), 200, 100);
         CompositeGewy gui = new CompositeGewy(icons);
     }
   }

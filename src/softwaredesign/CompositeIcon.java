@@ -16,51 +16,47 @@ package softwaredesign;
  * @author pat
  */
 import javax.swing.Icon;
-
 public class CompositeIcon implements Icon {
 
-    /**
-     * Constructs a composite icon @param width the width of the composite icon
-     * @param height the height of the composite icon
-     */
-    public CompositeIcon(int width, int height) {
-        this.width = width;
-        this.height = height;
-        iconList = new ArrayList<Icon>();
-        locationList = new ArrayList<Point>();
+    private ArrayList<Icon> icons;
+    private ArrayList<Integer> Xlist;
+    private ArrayList<Integer> Ylist;
+  
+    
+    
+    public void addIcon(Icon icon, int x, int y){
+        icons.add(icon);
+        Xlist.add(x);
+        Ylist.add(y);
     }
-
-    CompositeIcon() {
+    
+    public CompositeIcon(){
+    	icons = new ArrayList<Icon>();
+    	Xlist = new ArrayList<Integer>();
+    	Ylist = new ArrayList<Integer>();
     }
-
-    public int getIconWidth() {
-        return width;
+    
+    public ArrayList getList(){
+    	return icons;
     }
-
-    public int getIconHeight() {
-        return height;
-    }
-
+   
+    
+    
+    @Override
     public void paintIcon(Component c, Graphics g, int x, int y) {
-        int i = 0;
-        for (Icon s : iconList) {
-            Point offset = locationList.get(i++);
-            s.paintIcon(c, g, x + offset.x, y + offset.y);
+        for(int i = 0; i < icons.size(); i++){
+            icons.get(i).paintIcon(c, g, Xlist.get(i), Ylist.get(i));
         }
     }
 
-    /**
-     * Adds an icon to this composite icon @param icon the icon to add
-     *
-     * @param x the x offset of the icon within the composite @param y the y
-     * offset of the icon within the composite
-     */
-    public void addIcon(Icon icon, int x, int y) {
-        iconList.add(icon);
-        locationList.add(new Point(x, y));
+    @Override
+    public int getIconWidth() {
+        return 25;
     }
-    private int width;
-    private int height;
-    private ArrayList<Icon> iconList;
-    private ArrayList<Point> locationList;
+
+    @Override
+    public int getIconHeight() {
+        return 25;
+    }
+    
 }

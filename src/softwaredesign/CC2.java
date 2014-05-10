@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 /**
  *
  * @author pat
+ * CONCRETE CLASS TWO
  */
 public class CC2 extends ImageIcon {
     public CC2(String j){

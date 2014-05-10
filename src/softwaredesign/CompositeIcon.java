@@ -7,8 +7,6 @@ package softwaredesign;
 
 import java.awt.*;
 import java.util.*;
-import javax.swing.*;
-
 /**
  *
  * @author pat
@@ -17,12 +15,12 @@ import javax.swing.Icon;
 
 public class CompositeIcon implements Icon {
 
-    private ArrayList<Icon> iconList;
+    private ArrayList<Icon> List;
     private ArrayList<Integer> XList;
     private ArrayList<Integer> YList;
 
     public CompositeIcon() {
-        iconList = new ArrayList<Icon>();
+        List = new ArrayList<Icon>();
         XList = new ArrayList<Integer>();
         YList = new ArrayList<Integer>();
     }
@@ -35,16 +33,15 @@ public class CompositeIcon implements Icon {
         return 700;
     }
 
-    @Override
     public void paintIcon(Component c, Graphics g, int x, int y) {
-        for (int i = 0; i < iconList.size(); i++) {
-            iconList.get(i).paintIcon(c, g, XList.get(i), YList.get(i));
+        for (int i = 0; i < List.size(); i++) {
+            List.get(i).paintIcon(c, g, XList.get(i), YList.get(i));
         }
 
     }
 
     public void addIcon(Icon icon, int x, int y) {
-        iconList.add(icon);
+        List.add(icon);
         XList.add(x);
         YList.add(y);
     }

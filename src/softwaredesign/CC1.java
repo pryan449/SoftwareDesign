@@ -11,7 +11,9 @@ import javax.swing.ImageIcon;
 /**
  *
  * @author pat
+ * CONCRETE CLASS ONE
  */
+
 public class CC1 extends ImageIcon{
     public CC1(String k){
         super(k);

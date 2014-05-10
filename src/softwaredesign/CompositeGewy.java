@@ -12,7 +12,10 @@ import javax.swing.JPanel;
 /**
  *
  * @author pat
+ * 
+ * THIS CLASS IS THE GUI AND TESTER FOR PART ONE
  */
+
 public class CompositeGewy extends JPanel {
 
     private JFrame frame = new JFrame();
@@ -31,8 +34,8 @@ public class CompositeGewy extends JPanel {
 
     public static void main(String[] args) throws Exception {
         CompositeIcon icons = new CompositeIcon();
-        icons.addIcon(new CC1("1396752876253.jpg"), 0, 375);
-        icons.addIcon(new CC2("1398526266597.jpg"), 5, 50);
+        icons.addIcon(new CC1("1396752876253.jpg"), 0, 290);
+        icons.addIcon(new CC2("1398526266597.jpg"), 0, 0);
         CompositeGewy gui = new CompositeGewy(icons);
     }
 }
